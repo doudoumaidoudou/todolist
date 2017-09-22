@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+	</head>
+
+	<body>
+		<h1>登录</h1>
+		<input class="username" type="text" name="" id="" value="" placeholder="请输入用户名" /><br />
+		<input class="password" type="text" name="" id="" value="" placeholder="请输入密码" /><br />
+		<button class="submit">登录</button>
+		<script>
+			window.onload = function() {
+				$('.submit').on('click', function() {
+					var data = {
+						username: $('.username').val(),
+						password: $('.password').val()
+					}
+					$.ajax({
+						type: "post",
+						url: 'login.php',
+						dataType: 'json',
+						data: data,
+						success: function(data) {
+							if(data===1){
+								alert('登录成功！');
+								location.href="./list.php";
+							}else{
+								alert('登录失败')
+							}
+						},
+						error: function() {
+							alert('发送请求失败！')
+						}
+					})
+				})
+			}
+		</script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+	</body>
+
+</html>

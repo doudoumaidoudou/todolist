@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+	</head>
+
+	<body>
+		<h1>注册</h1>
+		<input class="username" type="text" name="" id="" value="" placeholder="请输入用户名" /><br />
+		<input class="email" type="text" name="" id="" value="" placeholder="请输入邮箱" /><br />
+		<input class="password" type="text" name="" id="" value="" placeholder="请输入密码" /><br />
+		<input type="text" name="" id="" value="" placeholder="请输重复输入密码" /><br>
+		<button class="submit">提交</button>
+		<script>
+			window.onload = function() {
+				$('.submit').on('click', function() {
+					var data = {
+						username: $('.username').val(),
+						email: $('.email').val(),
+						password: $('.password').val()
+					}
+					$.ajax({
+						type: "post",
+						url: 'logup.php',
+						dataType: 'json',
+						data: data,
+						success: function(data) {
+							alert('注册成功！');
+						},
+						error: function() {
+							alert('发送失败！')
+						}
+					})
+				})
+			}
+		</script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+	</body>
+
+</html>
