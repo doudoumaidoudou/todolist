@@ -12,4 +12,5 @@ if($conn->query($sql)===TRUE){
 }else{
 	echo "2";
 };
+$conn->close();
 ?>

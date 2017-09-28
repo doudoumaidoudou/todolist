@@ -10,6 +10,7 @@
 		<input class="username" type="text" name="" id="" value="" placeholder="请输入用户名" /><br />
 		<input class="password" type="text" name="" id="" value="" placeholder="请输入密码" /><br />
 		<button class="submit">登录</button>
+		<a href="logup.html">注册</a>
 		<script>
 			window.onload = function() {
 				$('.submit').on('click', function() {
@@ -24,6 +25,7 @@
 						data: data,
 						success: function(data) {
 							if(data===1){
+								
 								alert('登录成功！');
 								location.href="./list.php";
 							}else{

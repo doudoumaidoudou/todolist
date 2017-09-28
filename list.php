@@ -10,12 +10,14 @@
 			<input type="submit" value="发表" name=""/><br />
 		</form>		
 		<!---->
+		<a href="logout.php">退出登录</a>
 	</body>
 	<script src="js/jquery.js"></script>
 	
 </html>
 <?php
 	include './link.php';
+	include './isLogin.php';
 	$sql = "SELECT * FROM message";
 	$result =  $conn->query($sql);
 	while ($row = mysqli_fetch_array($result)){?>

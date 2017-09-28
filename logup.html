@@ -27,6 +27,7 @@
 						data: data,
 						success: function(data) {
 							alert('注册成功！');
+							history.go(-1);
 						},
 						error: function() {
 							alert('发送失败！')
