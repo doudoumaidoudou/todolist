@@ -3,10 +3,6 @@
 		session_start();
 		if(!empty($_SESSION['username'])){
 		}else{
-			echo "
-				<script>
-					location.href='login.html';
-				</script>
-			";
+			header("Location:login.html");
 		}
 ?>
